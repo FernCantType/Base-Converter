@@ -33,9 +33,7 @@ public class BaseConverter {
         decimalToBaseValue();
         System.out.println(this);
     }
-    /**
-     * Converts the value from the original base to decimal 
-     */
+    //Converts the value from the original base to decimal 
     private void value1ToDecimal() {
         for(int i = 0; i < value1.length(); i++) {
             char ch = value1.charAt(i);
@@ -43,9 +41,7 @@ public class BaseConverter {
             decimalValue1 += digitValue * (long) Math.pow(base1, value1.length() - 1 - i);
         }
     }
-    /**
-     * Converts the decimal value to the desired output base 
-     */
+    //Converts the decimal value to the desired output base 
     private void decimalToBaseValue() {
         long n = decimalValue1;
         if(n == 0) {
@@ -59,9 +55,7 @@ public class BaseConverter {
             n /= base2;
         }
     }
-    /**
-     * Validates that the characters in the input string are valid for the base 
-     */
+    //Validates that the characters in the input string are valid for the base 
     private boolean isValid() {
         for(char ch : value1.toCharArray()) {
             int digitValue = Character.isDigit(ch) ? ch - '0' : ch - 'A' + 10;
@@ -69,9 +63,7 @@ public class BaseConverter {
         }
         return true;
     }
-    /**
-     * Returns a summary string of the conversion 
-     */
+    //Returns a summary string of the conversion 
     @Override
     public String toString() {
         return value1 + " in base " + base1 + " is equal to " + value2 + 
